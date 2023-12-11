@@ -7,6 +7,7 @@ import java.util.ArrayList;
  */
 public class Memory {
     private ArrayList<_3AddressCode> codeBlock;
+
     private int lastTempIndex;
     private int lastDataAddress;
     private final int stratTempMemoryAddress = 500;
@@ -20,14 +21,21 @@ public class Memory {
         lastDataAddress = stratDataMemoryAddress;
     }
 
-    public int getTemp() {
-        lastTempIndex += tempSize;
-        return lastTempIndex - tempSize;
+    int getLastTempIndex() {
+        return lastTempIndex;
     }
 
-    public int getDateAddress() {
+    public int getTemp() {
+        lastTempIndex += tempSize;
+        return getLastTempIndex() - tempSize;
+    }
+
+    public int getDataAddress(){
+        return lastDataAddress;
+    }
+
+    public void incrementLastDataAddress(){
         lastDataAddress += dataSize;
-        return lastDataAddress - dataSize;
     }
 
     public int saveMemory() {
