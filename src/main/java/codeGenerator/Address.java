@@ -9,6 +9,9 @@ public class Address {
     public TypeAddress Type;
     public varType varType;
 
+    public AddressContext addressContext = new AddressContext();
+
+
     public Address(int num, varType varType, TypeAddress Type) {
         this.num = num;
         this.Type = Type;
@@ -22,14 +25,6 @@ public class Address {
     }
 
     public String toString() {
-        switch (Type) {
-            case Direct:
-                return num + "";
-            case Indirect:
-                return "@" + num;
-            case Imidiate:
-                return "#" + num;
-        }
-        return num + "";
+        return addressContext.returnString(num);
     }
 }
