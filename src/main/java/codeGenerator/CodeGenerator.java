@@ -135,16 +135,20 @@ public class CodeGenerator {
         }
     }
 
-    private void defMain() {
-        //ss.pop();
-        memory.add3AddressCode(ss.pop().num, Operation.JP, new Address(memory.getCurrentCodeBlockAddress(), varType.Address), null, null);
-        String methodName = "main";
+    private void registerMethod(String methodName){
         String className = symbolStack.pop();
 
         symbolTable.addMethod(className, methodName, memory.getCurrentCodeBlockAddress());
 
         symbolStack.push(className);
         symbolStack.push(methodName);
+    }
+
+    private void defMain() {
+        //ss.pop();
+        memory.add3AddressCode(ss.pop().num, Operation.JP, new Address(memory.getCurrentCodeBlockAddress(), varType.Address), null, null);
+        String methodName = "main";
+        registerMethod(methodName);
     }
 
     //    public void spid(Token next){
@@ -412,12 +416,7 @@ public class CodeGenerator {
     public void defMethod() {
         ss.pop();
         String methodName = symbolStack.pop();
-        String className = symbolStack.pop();
-
-        symbolTable.addMethod(className, methodName, memory.getCurrentCodeBlockAddress());
-
-        symbolStack.push(className);
-        symbolStack.push(methodName);
+        registerMethod(methodName);
     }
 
     public void popClass() {
