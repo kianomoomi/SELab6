@@ -13,3 +13,13 @@
 به منظور اعمال الگو facade برای کلاس main بک کلاس ParserStarterFacade را تعریف می‌کنیم و از داخل main این کلاس صدا زده می‌شود.
 ![image](https://github.com/kianomoomi/SELab6/assets/59165380/bf407573-5003-4ab3-9a7a-c17f1087229d)
 ![image](https://github.com/kianomoomi/SELab6/assets/59165380/996b0d56-7b1f-45c8-9a5f-fb16839a6e52)
+### ریفکتور strategy
+در این بخش ما switch case داخل کلاس Address را برداشته و به جای آن یک Strategy گذاشتیم. با این تغییر در صورتی که در هر کدام از آن caseها بخواهد کاری انجام شود می‌شود به راحتی تنها در کلاس‌های strategy مربوطه اضافه شود.
+![image](https://github.com/kianomoomi/SELab6/assets/59165380/75c227ed-5d98-4f1d-9c5a-425ceb7fee8b)
+![image](https://github.com/kianomoomi/SELab6/assets/59165380/ea345127-7a59-433a-9550-62bc85054bcf)
+![image](https://github.com/kianomoomi/SELab6/assets/59165380/b4921048-67bb-4071-9d55-ae2fb672f33d)
+![image](https://github.com/kianomoomi/SELab6/assets/59165380/ade0f594-df57-4197-89fc-340fcf0def98)
+### ریفکتور separate query from modifier
+در این بخش از آنجا که هم مقدار lastDateAddress تغییر میکرد و هم return میشد، دو عملکرد را در قالب دو متد جدا کردیم و رفرنس‌های آن را نیز تغییر دادیم.
+![image](https://github.com/kianomoomi/SELab6/assets/59165380/139e863f-48ca-4411-ab7d-2e849348da4f)
+![image](https://github.com/kianomoomi/SELab6/assets/59165380/ffee603f-85cd-46f7-a0e7-909a43936d59)
