@@ -24,7 +24,11 @@ public class Address {
         this.varType = varType;
     }
 
+    AddressContext getAddressContext() {
+        return addressStrategy;
+    }
+
     public String toString() {
-        return addressContext.returnString(num);
+        return getAddressContext().returnString(num);
     }
 }
